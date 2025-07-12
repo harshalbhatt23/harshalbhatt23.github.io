@@ -5,128 +5,405 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Harshal Bhatt - Academic Profile</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap');
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gold: #f1c40f;
+        }
+        
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right, #f0f4f8, #e0e7ff);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
             color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
-        header {
-            background: #4b0082;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 2rem;
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             background: white;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-top: -50px;
-            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
-        h1, h2 {
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--gold), var(--accent));
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--gold);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .designation {
+            font-size: 1.3rem;
             margin: 0.5rem 0;
+            color: var(--light);
         }
-        section {
-            margin-bottom: 2rem;
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
         }
-        ul {
-            padding-left: 1.5rem;
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+        
+        .icon {
+            color: var(--gold);
+        }
+        
+        .section {
+            padding: 1.5rem 2rem;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .grid-label {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .publication {
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .publication-title {
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .publication-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
         a {
-            color: #4b0082;
+            color: var(--accent);
             text-decoration: none;
+            transition: color 0.3s;
         }
+        
         a:hover {
+            color: var(--secondary);
             text-decoration: underline;
         }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
         footer {
+            background-color: var(--primary);
+            color: white;
             text-align: center;
             padding: 1rem;
-            background: #4b0082;
-            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Dr. Harshal Bhatt</h1>
-    <p>Assistant Professor, Dept. of Sanskrit, Pali & Prakrit<br>The Maharaja Sayajirao University of Baroda</p>
-    <p>Email: harshal.bhatt-spp@msubaroda.ac.in | Mo: +91 7874965787</p>
-</header>
-
-<main>
-    <section>
-        <h2>Area of Specialization</h2>
-        <p>Sanskrit Grammar, Manuscriptology</p>
-    </section>
-
-    <section>
-        <h2>Research Work</h2>
-        <p>Research Assistant, Sushruta Project, University of Alberta, Canada.</p>
-    </section>
-
-    <section>
-        <h2>Academic Qualification</h2>
-        <ul>
-            <li>Ph.D., The M. S. University of Baroda, Dec 2023</li>
-            <li>NET, UGC, 2017</li>
-            <li>SET, GSET, 2017</li>
-            <li>M.A., Shree Somnath Sanskrit University, 2016</li>
-            <li>B.A., Shree Somnath Sanskrit University, 2014</li>
-            <li>H.S.C., GSHSEB, 2011</li>
-            <li>S.S.C., GSEB, 2009</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Computer Proficiency</h2>
-        <ul>
-            <li>Certificate in Multilingual Office Automation, C-DAC, Pune, A+, 2010</li>
-            <li>Diploma in Multilingual Web Technologies & Publishing, C-DAC, Pune, B, 2012</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Teaching & Research Experience</h2>
-        <ul>
-            <li>2 years as Research Project Fellow, Major Research Project, UGC, The M. S. University of Baroda</li>
-            <li>3 years as Research Assistant, University of Alberta, Edmonton, Canada</li>
-            <li>4 years as Assistant Professor, Department of Sanskrit, Pali & Prakrit, The M. S. University of Baroda (present)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Research Papers</h2>
-        <ul>
-            <li>Chronicle of Grammar Philosophy and Nagesh Bhatta’s Paramalaghumanjusha, Shodhjyoti, Vol. 4, 2022</li>
-            <li><a href="https://doi.org/10.20935/AL2992">Further Insight into the Role of Dhanvantari, Academia Letters, Aug. 2021</a></li>
-            <li><a href="https://doi.org/10.20935/AL3954">The Graphemes ch and cch in the Nepalese Script, Academia Letters, Nov. 2021</a></li>
-            <li>नागेशकृताया परमलघुमञ्जूषायाः स्फोटवादः, शोधज्योतिः, 2020</li>
-            <li>પરમલઘુમંજૂષા - વ્યાકરણદર્શનનો સારાંશ, સ્વાધ્યાય, 2018</li>
-            <li>शिशुपालवधमहाकाव्ये वक्रोक्तिवैचित्र्यम्, Dhīmahi, 2018</li>
-            <li>અભિરાજ રાજેન્દ્રમિશ્ર કૃત ‘કાન્તારકથા’, સ્વાધ્યાય, 2017</li>
-            <li>Kārakakārikā - An unpublished text on Sanskrit Grammar, Mātṛkāmaṇayaḥ, 2017</li>
-            <li>रामस्वामी शास्त्री द्वारा संपादित न्यायरत्नमाला की समीक्षा, 2017</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Books Published</h2>
-        <ul>
-            <li><a href="https://doi.org/10.11588/hasp.1203">On the Plastic Surgery of the Ears and Nose, 2023</a></li>
-            <li>Śrīpratāpacandracaritam Mahākāvyam, Hindi Translation, New Bharatiya Book Corporation, 2022</li>
-        </ul>
-    </section>
-
-</main>
-
-<footer>
-    © 2025 Dr. Harshal Bhatt | Academic Profile
-</footer>
-
+    <div class="container">
+        <header>
+            <h1>Dr. Harshal Bhatt</h1>
+            <div class="designation">Assistant Professor | Sanskrit Scholar | Researcher</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <a href="mailto:harshal.bhatt-spp@msubaroda.ac.in">harshal.bhatt-spp@msubaroda.ac.in</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span>
+                    <span>+91 7874965787</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🏛️</span>
+                    <span>The Maharaja Sayajirao University of Baroda, Vadodara</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="section">
+            <h2>Professional Profile</h2>
+            <div class="grid-container">
+                <div class="grid-label">Area of Specialization:</div>
+                <div>Sanskrit Grammar, Manuscriptology</div>
+                
+                <div class="grid-label">Current Position:</div>
+                <div>
+                    <strong>Assistant Professor</strong><br>
+                    Dept. of Sanskrit, Pali & Prakrit<br>
+                    Faculty of Arts<br>
+                    The Maharaja Sayajirao University of Baroda, Vadodara
+                </div>
+                
+                <div class="grid-label">Research Experience:</div>
+                <div>
+                    <strong>Research Assistant</strong><br>
+                    <a href="https://sushrutaproject.org/" target="_blank">Sushrutaproject</a>, University of Alberta, Canada
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Academic Qualifications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>University/Board</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ph.D.</td>
+                        <td>The M. S. University of Baroda</td>
+                        <td>Dec 2023</td>
+                    </tr>
+                    <tr>
+                        <td>NET</td>
+                        <td>UGC</td>
+                        <td>2017</td>
+                    </tr>
+                    <tr>
+                        <td>SET</td>
+                        <td>GSET</td>
+                        <td>2017</td>
+                    </tr>
+                    <tr>
+                        <td>M.A.</td>
+                        <td>Shree Somnath Sanskrit University</td>
+                        <td>2016</td>
+                    </tr>
+                    <tr>
+                        <td>B.A.</td>
+                        <td>Shree Somnath Sanskrit University</td>
+                        <td>2014</td>
+                    </tr>
+                    <tr>
+                        <td>H.S.C.</td>
+                        <td>GSHSEB</td>
+                        <td>2011</td>
+                    </tr>
+                    <tr>
+                        <td>S.S.C.</td>
+                        <td>GSEB</td>
+                        <td>2009</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Computer Proficiency</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Certificate</th>
+                        <th>Centre</th>
+                        <th>Grade</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Certificate in Multilingual Office Automation (C.M.O.A)</td>
+                        <td>C-DAC, Pune</td>
+                        <td>A+</td>
+                        <td>2010</td>
+                    </tr>
+                    <tr>
+                        <td>Diploma in Multilingual Web Technologies & Publishing (DMWT&P)</td>
+                        <td>C-DAC, Pune</td>
+                        <td>B</td>
+                        <td>2012</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>Teaching & Research Experience</h2>
+            <div class="publication">
+                <p><strong>4 years</strong> of Teaching Experience in UG and PG level as an Assistant Professor in the Department of Sanskrit, Pali & Prakrit, The M. S. University of Baroda, Vadodara. (current position)</p>
+            </div>
+            <div class="publication">
+                <p><strong>3 years</strong> of Research Experience as a research assistant at The University of Alberta, Edmonton, Canada.</p>
+            </div>
+            <div class="publication">
+                <p><strong>2 years</strong> of Research Experience as a Research Project fellow in the Major Research Project (Descriptive Catalogue of Nyāya manuscripts preserved at Oriental Institute, Vadodara), funded by UGC at The Oriental Institute, The M. S. University of Baroda, Vadodara.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Research Papers</h2>
+            <div class="publication">
+                <div class="publication-title">Chronicle of Grammar Philosophy and Nagesh Bhatta's Paramalaghumanjusha</div>
+                <div class="publication-meta">Shodhjyoti, Vol. 4, Shree Somnath Sanskrit Mahavidyalaya, 2022</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Co-author: Further Insight into the Role of Dhanvantari, the physician to the gods, in the Suśrutasaṃhitā</div>
+                <div class="publication-meta">ACADEMIA Letters, Aug. 2021 <a href="https://doi.org/10.20935/AL2992" target="_blank">https://doi.org/10.20935/AL2992</a></div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Co-author: The Graphemes ch and cch in the Nepalese Script</div>
+                <div class="publication-meta">ACADEMIA Letters, Nov. 2021 <a href="https://doi.org/10.20935/AL3954" target="_blank">https://doi.org/10.20935/AL3954</a></div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">नागेशकृताया परमलघुमञ्जूषायाः स्फोटवादः</div>
+                <div class="publication-meta">शोधज्योतिः, अङ्कः 2, श्रीसोमनाथसंस्कृतविश्वविद्यालयः, 2020</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">પરમલઘુમંજૂષા - વ્યાકરણદર્શનનો સારાંશ</div>
+                <div class="publication-meta">સ્વાધ્યાય, પ્રાચ્યવિદ્યા મંદિર, મહારાજા સયાજીરાવ વિશ્વવિદ્યાલય બરોડા, વડોદરા, 2018</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">शिशुपालवधमहाकाव्ये वक्रोक्तिवैचित्र्यम्</div>
+                <div class="publication-meta">Dhīmahi, Tri-Lingual Journal of Chinmaya International Foundation Shodha Sansthan, Ernakulam, Kerala, 2018</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">અભિરાજ રાજેન્દ્રમિશ્ર કૃત 'કાન્તારકથા'- બાળસાહિત્યની વિશિષ્ટ કૃતિ</div>
+                <div class="publication-meta">સ્વાધ્યાય, પ્રાચ્યવિદ્યા મંદિર, મહારાજા સયાજીરાવ વિશ્વવિદ્યાલય બરોડા, વડોદરા, 2017</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Kārakakārikā - An unpublished text on Sanskrit Grammar, Mātṛkāmaṇayaḥ</div>
+                <div class="publication-meta">Oriental Institute, The M. S. University of Baroda, Vadodara, 2017</div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">रामस्वामी शास्त्री द्वारा संपादित न्यायरत्नमाला की समीक्षा, Pt. K. S. Ramaswami Shastri's Contribution to Manuscriptology and Critical Editing</div>
+                <div class="publication-meta">Oriental Institute, The M. S. University of Baroda, 2017</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Books Published</h2>
+            <div class="publication">
+                <div class="publication-title">On the Plastic Surgery of the Ears and Nose. The Nepalese Version of the Suśrutasaṃhitā</div>
+                <div class="publication-meta">Co-author with Wujastyk, Dominik, Jason Birch, et al. Heidelberg: Heidelberg Asian Studies Publishing, 2023. <a href="https://doi.org/10.11588/hasp.1203" target="_blank">https://doi.org/10.11588/hasp.1203</a></div>
+            </div>
+            
+            <div class="publication">
+                <div class="publication-title">Śrīpratāpacandracaritam Mahākāvyam</div>
+                <div class="publication-meta">Sanskrit text with Hindi translation by Harshal Bhatt, New Bharatiya Book Corporation, New Delhi, 2022. <a href="https://www.amazon.in/Pratapchandra-Charitam-Mahakavyam-Sanskrit-Translation/dp/8183155103/" target="_blank">View on Amazon</a></div>
+            </div>
+        </div>
+        
+        <footer>
+            &copy; 2024 Dr. Harshal Bhatt | Last Updated: February 2024
+        </footer>
+    </div>
 </body>
 </html>
