@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: squid-game-registration
-    env: python
-    buildCommand: ""
-    startCommand: python app.py
